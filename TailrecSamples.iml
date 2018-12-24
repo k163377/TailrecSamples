@@ -23,6 +23,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="org.junit.contrib:junit-theories:4.12" level="project" />
-    <orderEntry type="library" name="org.jboss.arquillian.extension:arquillian-drone-api:2.5.1" level="project" />
+    <orderEntry type="library" name="io.arrow-kt:arrow-core:0.8.1" level="project" />
   </component>
 </module>
