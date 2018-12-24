@@ -32,7 +32,8 @@ class FunctionsKtTest internal constructor() {
 
     @Test
     fun testPow() {
-
+        val ans = pow(2.toBigInteger(), 10)
+        assertEquals(1024.toBigInteger(), ans)
     }
 
     @Test
@@ -52,5 +53,15 @@ class FunctionsKtTest internal constructor() {
             3.0
         )
         assertEquals(2.0, ans * ans * ans, 0.00001)
+    }
+
+    @Test
+    fun testRadixSort() {
+        val ansArr = uintArrayOf(0u, 1u, 2u, 3u, 3u, 4u, 5u, 6u)
+        val inputArr = uintArrayOf(6u, 4u, 3u, 2u, 1u, 3u, 5u, 0u)
+        assertEquals(
+            ansArr.toList(),
+            radixSort(inputArr.toList())
+        )
     }
 }
