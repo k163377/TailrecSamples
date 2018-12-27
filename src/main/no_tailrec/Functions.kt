@@ -1,6 +1,7 @@
 package main.no_tailrec
 
 import java.math.BigInteger
+import kotlin.math.abs
 
 fun fact(n: BigInteger): BigInteger{
     var i = n
@@ -23,16 +24,43 @@ fun gcd(a: Int, b: Int): Int{
     return x
 }
 
-/*fun fib(n: BigInteger): BigInteger{
-    val fibo =
-            generateSequence(BigInteger.ZERO to BigInteger.ONE) { (a, b) -> b to (a + b) }
-                .map { it.first }
-                .
+fun fib(n: BigInteger): BigInteger{
+    var i = n
+    var a = BigInteger.ZERO
+    var b = BigInteger.ONE
+    var temp: BigInteger
+    while (i > BigInteger.ONE){
+        temp = b
+        b = a + b
+        a = temp
+        i--
+    }
+    return a
+}
 
+fun pow(a: BigInteger, n: Int): BigInteger{
+    var i = n
+    var atemp = a
+    var ans = BigInteger.ONE
+    while (i != 0){
+        if(i.and(1) == 1) ans *= atemp
+        atemp *= atemp
+        i = i.ushr(1)
+    }
+    return ans
+}
 
-    var x = BigInteger.ZERO
-    var y = BigInteger.ONE
-
-    val range = BigInteger.ONE.rangeTo(java.math.BigInteger.TEN)
-
-}*/
+fun newton(
+    f: (Double)-> Double,
+    df: (Double)-> Double,
+    x0: Double,
+    eps: Double = Float.MIN_VALUE.toDouble()
+): Double{
+    var x: Double
+    var xnew: Double = x0
+    do {
+        x = xnew
+        xnew = x - f(x)/df(x)
+    }while (abs(x - xnew) > eps)
+    return xnew
+}
