@@ -46,4 +46,13 @@ class NoTailrecTest internal constructor() {
         )
         assertEquals(2.0, ans * ans * ans, 0.00001)
     }
+
+    @Test
+    fun testGoldenRatio() {
+        assertEquals(
+            1.618,
+            goldenRatio(100000),
+            0.0001
+        )
+    }
 }

@@ -64,3 +64,11 @@ fun newton(
     }while (abs(x - xnew) > eps)
     return xnew
 }
+
+fun goldenRatio(n: Int): Double{
+    var ans = 1.0
+    for(i in 0 .. n){
+        ans = 1.0 + 1.0 / ans
+    }
+    return ans
+}
